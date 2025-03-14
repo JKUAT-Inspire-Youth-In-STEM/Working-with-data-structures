@@ -96,14 +96,29 @@ for (let i = 0; i < pets.length; i++) {
 }
 
 
+/**
+ * 
+ * Fetching value of s text field in DOM
+ */
 
-// Accessing DOM
+let submit = document.getElementById("submit");
 
-let submit_button = document.getElementById("pet-owner");
+submit.addEventListener("click", function(){
+    
 
 
-submit_button.addEventListener("click", function () {
-	console.log("Someone clicked me!");
-});
+    let name_field = document.getElementById("pet-owner");
+    let name_field_value = name_field.value
 
+    let pet_name_value = document.getElementById("pet-name").value
+
+    if (!name_field_value || !pet_name_value){
+        console.log("Please fill all fields")
+        return
+    }
+
+    console.log("name field value: ", name_field_value)
+    console.log("Pet field value: ", pet_name_value)
+
+})
 
